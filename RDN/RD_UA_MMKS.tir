@@ -1,0 +1,36 @@
+[HEADER]
+FILE_TYPE                             = 'tir'
+$----------------------------------------------------------------units
+[UNITS]
+LENGTH                                = 'mm'
+FORCE                                 = 'newton'
+ANGLE                                 = 'radians'
+MASS                                  = 'kg'
+TIME                                  = 'second'
+$----------------------------------------------------------------model
+[MODEL]
+VENDER_TIRE_TYPE                      = 'RD-UA'
+$-----------------------------------------------------------dimensions
+[DIMENSION]
+$-Tire Dimension 205-60-R14
+UNLOADED_RADIUS                       = 100
+WIDTH                                 = 90
+RIM_RADIUS                            = 30
+$-------------------------------------------------------------parameter
+[PARAMETER]
+$ vertical stiffness (Force/Length) based 292.8
+RADIAL_STIFFNESS                      = 412
+$ vertical damping ratio
+RADIAL_DAMPING_RATIO                  = 8
+% longitudinal slip stiffness (Force/ratio)
+LONGITUDINAL_STIFFNESS                = 6
+% lateral slip stiffness (Force/angle) 1
+LATERAL_STIFFNESS                     = 1
+% camber stiffness (Force/angle)1
+CAMBER_STIFFNESS                      = 1
+% rolling registance length (Length) 0.01
+ROLLING_RESISTANCE                    = 0.01
+% maximum friction coefficient 0.1
+FRICTION_MAX                          = 1.1
+% minimum friction coefficient 0.1
+FRICTION_MIN                          = 0.8
