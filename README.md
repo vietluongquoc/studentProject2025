@@ -12,9 +12,16 @@ This is a student project in Faculty of mechanical engineering and technology 20
 - MATLAB 2019b
 
 ## Note
-- Check the file in folder recurdyn
+- Check the file in folder recurdyn [RDN250402]
 ## REFRENCE
-- [3D file](https://grabcad.com/library/sachs-motorsport-fsae-formula-student-damper-1/details?folder_id=8082051)
+
+## Cur-version: 1.250408
+
+- Finish the project
+- Make the simulation
+- Create the RECURDYN
+- make doc file
+
 
 ## Cur-version: 1.250325
 

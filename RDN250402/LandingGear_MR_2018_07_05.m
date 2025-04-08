@@ -1,0 +1,42 @@
+addpath('C:\Program Files\FunctionBay, Inc\RecurDyn V9R1\Toolkits\Controls\Simulink30');
+%addpath('C:\Program Files\FunctionBay, Inc\RecurDyn V9R1\Toolkits\Controls\Matlab');
+RecurDyn='C:\Program Files\FunctionBay, Inc\RecurDyn V9R1\Bin\';
+RecurDyn_CoSim='C:\Program Files\FunctionBay, Inc\RecurDyn V9R1\Toolkits\Controls\Simulink30\';
+RecurDyn_model='LandingGear_2025_04_02_with_Tire';
+r_temp___=size(RecurDyn_model);
+RecurDyn_model_n=r_temp___(2);
+Output_File='LandingGear_MR_2018_07_05_01';
+r_temp___=size(Output_File);
+Output_file_n =r_temp___(2);
+if(exist([RecurDyn_model,'.rdyn']))
+  RecurDyn_inputs = 'InFk!InFv';
+  RecurDyn_outputs = 'OutS!OutSdot!OutZ1!OutZ2';
+  RecurDyn_io_ids = [  1  2  3  4  5  6 ];
+  RecurDyn_controltimestep = 1.e-003;
+  Plant_inputs = Rearrange_io( RecurDyn_inputs );
+  Plant_outputs = Rearrange_io( RecurDyn_outputs );
+  r_temp___=size(Plant_inputs);
+  Plant_inputs_num=r_temp___(1);
+  r_temp___=size(Plant_outputs);
+  Plant_outputs_num=r_temp___(1);
+  r_temp___=version;
+  Matlab_version=str2double(r_temp___(1));
+  disp('');
+  disp('===== RecurDyn & Matlab/SIMULINK ==========');
+  disp('%%% INFO : RecurDyn plant actuators names :');
+  disp([int2str([1:size(Plant_inputs,1)]'),blanks(size(Plant_inputs,1))',Plant_inputs]);
+  disp('%%% INFO : RecurDyn plant sensors names :');
+  disp([int2str([1:size(Plant_outputs,1)]'),blanks(size(Plant_outputs,1))',Plant_outputs]);
+  disp( '=============================================' ) ;
+% disp( '************************ Reserved Variables ************************* ' ) ;
+% disp( '* Plant_inputs,Plant_outputs,RecurDyn,RecurDyn_model,RecurDyn_static*' ) ;
+% disp( '* RecurDyn_inputs,RecurDyn_io_ids,RecurDyn_outputs                  *' ) ;
+% disp( '* RecurDyn_controltimestep,RecurDyn_show,RecurDyn_step              *');
+% disp( '************* Reserved variables can not be changed ***************** ' ) ;
+  disp( ' ' ) ;
+else
+  disp('');
+  disp('%%% ERROR : missing RecurDyn plant model file !!!');
+  disp('');
+end
+  clear r_temp___;
